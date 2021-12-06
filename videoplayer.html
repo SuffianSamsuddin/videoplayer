@@ -1,0 +1,114 @@
+<!DOCTYPE html5>
+<!-- built for mobile first -->
+<head>
+    <title>Dream Player | Digital Dreams</title>
+    <link rel="stylesheet" href="videoplayer.css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet"> -->
+
+    <script>
+
+        var vol = 1
+
+        function playVid () {
+            document.getElementById('vid').play();
+        }
+
+        function pauseVid () {
+            document.getElementById('vid').pause();
+        }
+
+        // function increaseVol () {
+        //     vol += volData
+        //     document.getElementById('vid').volume = vol + 1;
+        // }
+
+        function updateVol(volData) {
+                vol += volData;
+                document.getElementById('vid').volume = vol;
+            }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+        <header>
+            <nav>
+                <div id="logo">
+                    <img src="playerIcon.svg" class="playerIcon">
+                </div>
+                <div id="menu">
+                    <input id="searchBar" type="text" placeholder="  Search video">
+                    <input id="uploadBtn" type="submit" placeholder="Upload">
+                </div>
+            </nav>
+            
+        </header>
+
+        <section id="categories">
+            <p class="commonText">Categories</p>
+                <ul class="categList">
+                    <button class="categBtn">Nature</button>
+                    <button class="categBtn">Motivation</button>
+                    <button class="categBtn">Science</button>
+                    <button class="categBtn">Arts</button>
+                    <button class="categBtn">Trending</button>
+                </ul>
+        </section>
+
+        <section id="videoPlayer">
+            <video id="vid" src="vidOne.mp4"></video>
+        </section>
+
+        <section id="buttonPanel">
+            <button class="button" onClick="playVid()">Play</button>
+            <button class="button" onClick="pauseVid()">Pause</button>
+            <button class="button" onClick="updateVol(0.1)">Volume Up</button>
+            <button class="button" onClick="updateVol(-0.1)">Volume Down</button>
+        </section>
+
+        <div id="videoListContainer">
+            <div class="videoSegment">
+                <div class="video">
+                    <video id="listVid" src="vidListOne.3gp"></video>
+                </div>
+                <div class="videoText">
+                    <p class="vidTitle">Cooking lunch for Janda Baik camping</p>
+                    <br/>
+                    <p class="uploadInfo">Suffian Samsuddin</p>
+                    <p class="uploadInfo">Uploaded 2 days ago</p>
+                </div>
+            </div>
+
+            <div class="videoSegment">
+                <div class="video">
+                    <video id="listVid" src="vidListTwo.3gp"></video>
+                </div>
+                <div class="videoText">
+                    <p class="vidTitle">Fixing my kids' indoor wooden playground net segment</p>
+                    <br/>
+                    <p class="uploadInfo">Suffian Samsuddin</p>
+                    <p class="uploadInfo">Uploaded 2 days ago</p>
+                </div>
+            </div>
+
+            <div class="videoSegment">
+                <div class="video">
+                    <video id="listVid" src="vidListThree.3gp"></video>
+                </div>
+                <div class="videoText">
+                    <p class="vidTitle">Nabil and Ihsan at my house!</p>
+                    <br/>
+                    <p class="uploadInfo">Suffian Samsuddin</p>
+                    <p class="uploadInfo">Uploaded 2 days ago</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</body>
